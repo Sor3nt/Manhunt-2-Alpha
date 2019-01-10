@@ -304,9 +304,13 @@ begin
 		SetVector(pos2, -2.80827, 5.34154, 5.05305);
 		CreateBoxTrigger(pos, pos2, 'triggerRadarTut');
 		
-		SetVector(pos, -6.80582, 3.53097, -0.250218);
+		SetVector(pos, -9.35898, 0.238085, 2.01603);
+		SetVector(pos2, -9.15928, 3.68042, 4.71386);
+		CreateBoxTrigger(pos, pos2, 'triggerWheelchair');
+
+		{ SetVector(pos, -6.80582, 3.53097, -0.250218);
 		SetVector(pos2, -5.80582, 6.03097, 1.74978);
-		CreateBoxTrigger(pos, pos2, 'triggerWheelChair');
+		CreateBoxTrigger(pos, pos2, 'triggerWheelChair'); }
 		
 		{ Create trigger in office }
 		SetVector(pos, -17.8864, 6.20619, 32.4688);
