@@ -1,0 +1,10 @@
+[
+    {
+        "name": "runme",
+        "offset": "98000000",
+        "size": 4,
+        "hierarchieType": "01000000",
+        "objectType": "boolean",
+        "occurrences": []
+    }
+]
