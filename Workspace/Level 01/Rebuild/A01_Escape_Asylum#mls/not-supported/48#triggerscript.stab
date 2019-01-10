@@ -1,0 +1,28 @@
+[
+    {
+        "name": "glooniename",
+        "offset": "b0000000",
+        "size": 30,
+        "hierarchieType": "01000000",
+        "objectType": "string",
+        "occurrences": []
+    },
+    {
+        "name": "lcurrentlooniename",
+        "offset": "ffffffff",
+        "size": "ffffffff",
+        "hierarchieType": "ffffffff",
+        "objectType": "string",
+        "occurrences": [
+            144
+        ]
+    },
+    {
+        "name": "me",
+        "offset": "90000000",
+        "size": 30,
+        "hierarchieType": "01000000",
+        "objectType": "string",
+        "occurrences": []
+    }
+]
