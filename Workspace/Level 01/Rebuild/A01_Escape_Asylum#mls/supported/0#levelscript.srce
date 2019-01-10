@@ -296,6 +296,7 @@ begin
 		CreateBoxTrigger(pos, pos2, 'triggerExecTutFinal');
 
 		{ Create triggers }
+		{ MHR: this is the guy on the bottom spreading blood }
    		SetVector(pos, -13.1617, 0.0, 17.5953);
 		SetVector(pos2, -9.86173, 2.5, 18.0953);
 		CreateBoxTrigger(pos, pos2, 'triggerBloodSpurt2');
