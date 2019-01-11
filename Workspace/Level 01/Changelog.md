@@ -2,24 +2,9 @@
 
 #Port from PS2 Beta:
 
-####triggerNoiseRem
+####Jump scare script
 
-Add to **levelscript.srce**
-
-> Unknown right now
-```
-SetVector(pos, -13.739, 0.0, 40.7047);
-SetVector(pos2, -13.3013, 2.19097, 44.1915);
-CreateBoxTrigger(pos, pos2, 'triggerNoiseRem');
-```
-
-Copy Script **23#noiser.srce**
-
-
-
-####triggerLoon3
-
-> Jump scare script
+> Todo: this breaks the first tutorial because both share the same char (?)
 
 Add to **levelscript.srce**
 
@@ -31,9 +16,7 @@ CreateSphereTrigger(pos, 0.670224, 'triggerLoon3');
 Copy Scripts **16#triggerjumpingscare**
 
 
-####Chair
-
-> Alternative Chair spawn position
+####Beta Chair spawn position
 
 Add to **levelscript.srce**
 

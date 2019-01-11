@@ -304,7 +304,8 @@ begin
 		SetVector(pos, -3.94137, 1.75921, 1.96379);
 		SetVector(pos2, -2.80827, 5.34154, 5.05305);
 		CreateBoxTrigger(pos, pos2, 'triggerRadarTut');
-		
+
+		{ MHT: Port from PS2 Leak, different possition}
 		SetVector(pos, -9.35898, 0.238085, 2.01603);
 		SetVector(pos2, -9.15928, 3.68042, 4.71386);
 		CreateBoxTrigger(pos, pos2, 'triggerWheelchair');
@@ -330,6 +331,10 @@ begin
 		SetVector(pos2, -13.3013, 2.19097, 44.1915);
 		CreateBoxTrigger(pos, pos2, 'triggerNoiseRem');
 
+        {
+            MHT: Port from PS2 Leak, jump scare
+            TODO: this breaks the first tut because both share the same char (?)
+        }
 		SetVector(pos, -17.1411, 6.69318, 26.8479);
 		CreateSphereTrigger(pos, 0.670224, 'triggerLoon3');
 
