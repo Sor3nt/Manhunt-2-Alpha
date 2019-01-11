@@ -1516,6 +1516,44 @@ begin
 end;
 
 
+{procedure InitMonitors;
+begin}
+	{ Set up monitors }
+{	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER');
+	RunScript('CJ_MONITER', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER01');
+	RunScript('CJ_MONITER01', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER02');
+	RunScript('CJ_MONITER02', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_WILL_MONITER');
+	RunScript('CJ_WILL_MONITER', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_WILL_MONITER01');
+	RunScript('CJ_WILL_MONITER01', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER05');
+	RunScript('CJ_MONITER05', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER04');
+	RunScript('CJ_MONITER04', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_WILL_MONITER');
+	RunScript('CJ_WILL_MONITER', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_WILL_MONITER02');
+	RunScript('CJ_WILL_MONITER02', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER');
+	RunScript('CJ_MONITER', 'MonitorOn');
+
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER03');
+	RunScript('CJ_MONITER03', 'MonitorOn');
+
+end;}
+
 
 end.
    
