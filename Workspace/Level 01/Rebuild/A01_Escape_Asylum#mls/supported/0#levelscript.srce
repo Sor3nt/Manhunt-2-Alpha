@@ -891,10 +891,9 @@ begin
 	end;
 
 	EndOfLevel: begin
+	    {MHT: Enable old truck cutscene }
 		RunScript('player(player)', 'EndOfLevelCutScene');
-
 		sleep(100);
-
 		while IsCutSceneInProgress do sleep(50);
 
 		{ the level ends here }

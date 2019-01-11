@@ -2,6 +2,17 @@
 
 ####Enable Truck Cutscene
 
+>  commented in some elements from **InCarParkCutScene**
+
+Affected file **playerscript.srce**
+
+>  commented in some elements from **EndOfLevelCutScene**
+
+Affected file **levelscript.srce**
+
+
+####Enable Truck Cutscene 2
+
 Commented in **levelscript.srce**
 
 ```
