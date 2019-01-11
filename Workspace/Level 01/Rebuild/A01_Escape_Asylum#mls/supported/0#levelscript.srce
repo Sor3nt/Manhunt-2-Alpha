@@ -210,7 +210,7 @@ begin
 	{Stop the elev blocker}
 	EntityIgnoreCollisions(GetEntity('elev_door_block'), TRUE);
 	
-	{ Initialize monitors }
+	{ Initialize monitors}
 {	InitMonitors;}
 
 	{ Hide save points and determine if we're loading a game }
@@ -240,8 +240,7 @@ begin
 	{Init Leo so his script file's OnCreate is called}
 
 	{ Start level state machine }
-	
-	
+
 	if lLoadingFlag = FALSE then
 	begin
 		lLevelState := StartOfLevel;
@@ -251,16 +250,6 @@ begin
 	begin
 		RunScript('A01_Escape_Asylum', 'OnLevelStateLoad');
 	end;
-	        
-	 {DEBUGGGGGG      *******************}
-	
-	{SetVector(pos, 20.7197, 17.1234, 42.1878);
-
-	 MoveEntity(GetPlayer, pos, 1);
-	 lLevelState := InCarPark;
-		RunScript('A01_Escape_Asylum', 'OnLevelStateLoad');}
-	 {************************}
-	    
 
 end;
 
@@ -310,10 +299,6 @@ begin
 		SetVector(pos2, -9.15928, 3.68042, 4.71386);
 		CreateBoxTrigger(pos, pos2, 'triggerWheelchair');
 
-		{ SetVector(pos, -6.80582, 3.53097, -0.250218);
-		SetVector(pos2, -5.80582, 6.03097, 1.74978);
-		CreateBoxTrigger(pos, pos2, 'triggerWheelChair'); }
-		
 		{ Create trigger in office }
 		SetVector(pos, -17.8864, 6.20619, 32.4688);
 		SetVector(pos2, -14.4864, 8.70619, 32.9688);
@@ -337,15 +322,6 @@ begin
         }
 		SetVector(pos, -17.1411, 6.69318, 26.8479);
 		CreateSphereTrigger(pos, 0.670224, 'triggerLoon3');
-
-		{SetVector(pos, -22.3618, 5.38068, 15.7922);
-		SetVector(pos2, -18.0804, 8.36618, 19.8486);
-		CreateBoxTrigger(pos, pos2, 'triggerDripping');}
-
-		{Tv sound trigger}
-	{	SetVector(pos, -17.2359, 5.92107, 38.0337);
-		SetVector(pos2, -13.8896, 7.33389, 38.5636);
-		CreateBoxTrigger(pos, pos2, 'triggerTvSounds');}
 
 		SetVector(pos, -13.3137, 0.0, 30.9594);
 		SetVector(pos2, -9.7295, 2.31466, 31.5728);
@@ -382,7 +358,7 @@ begin
 		SetVector(pos, -53.1723, 0.0, 6.02074);
 		SetVector(pos2, -41.0816, 1.33944, 11.6464);
 		CreateBoxTrigger(pos, pos2, 'triggerWhyteSpeech');
-		
+
 		SetCurrentLOD(GetEntity('Asylum_cell_flicker'),1);
 		SetCurrentLOD(GetEntity('Asylum_bars_flicker'), 1);
 		SwitchLightOff (getentity('CJ_LIGHT_on_(L)39'));
@@ -1539,44 +1515,6 @@ begin
 	AIInited := TRUE;
 end;
 
-
-{procedure InitMonitors;
-begin}
-	{ Set up monitors }
-{	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER');
-	RunScript('CJ_MONITER', 'MonitorOn');
-
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER01');
-	RunScript('CJ_MONITER01', 'MonitorOn');
-
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER02');
-	RunScript('CJ_MONITER02', 'MonitorOn');
-
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_WILL_MONITER');
-	RunScript('CJ_WILL_MONITER', 'MonitorOn');
-
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_WILL_MONITER01');
-	RunScript('CJ_WILL_MONITER01', 'MonitorOn');
-	
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER05');
-	RunScript('CJ_MONITER05', 'MonitorOn');
-	
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER04');
-	RunScript('CJ_MONITER04', 'MonitorOn');
-	
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_WILL_MONITER');
-	RunScript('CJ_WILL_MONITER', 'MonitorOn');
-	
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_WILL_MONITER02');
-	RunScript('CJ_WILL_MONITER02', 'MonitorOn');
-	
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER');
-	RunScript('CJ_MONITER', 'MonitorOn');
-	
-	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER03');
-	RunScript('CJ_MONITER03', 'MonitorOn');	
-	     
-end;}
 
 
 end.
