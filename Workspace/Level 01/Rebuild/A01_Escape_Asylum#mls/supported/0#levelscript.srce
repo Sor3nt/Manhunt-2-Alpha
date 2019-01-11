@@ -87,7 +87,7 @@ var
 
 { Function and procedure declarations }
 procedure InitAI; FORWARD;
-{procedure InitMonitors; FORWARD;}
+procedure InitMonitors; FORWARD;
 
 
 script OnCreate;
@@ -211,7 +211,7 @@ begin
 	EntityIgnoreCollisions(GetEntity('elev_door_block'), TRUE);
 	
 	{ Initialize monitors}
-{	InitMonitors;}
+	InitMonitors;
 
 	{ Hide save points and determine if we're loading a game }
 	lLoadingFlag := TRUE;
@@ -1516,10 +1516,10 @@ begin
 end;
 
 
-{procedure InitMonitors;
-begin}
+procedure InitMonitors;
+begin
 	{ Set up monitors }
-{	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER');
+	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER');
 	RunScript('CJ_MONITER', 'MonitorOn');
 
 	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER01');
@@ -1552,7 +1552,7 @@ begin}
 	SetEntityScriptsFromEntity('Monitor_Template', 'CJ_MONITER03');
 	RunScript('CJ_MONITER03', 'MonitorOn');
 
-end;}
+end;
 
 
 end.

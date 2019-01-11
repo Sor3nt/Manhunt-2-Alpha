@@ -1,3 +1,10 @@
+#Port from Alpha:
+
+####Initialize the old Monitor script
+
+> just commented in the **InitMonitors** parts
+
+Affected file **levelscript.srce**
 
 
 #Port from PS2 Beta:
