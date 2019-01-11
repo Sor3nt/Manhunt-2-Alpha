@@ -1,5 +1,16 @@
 #Port from Alpha:
 
+####Enable Truck Cutscene
+
+Commented in **levelscript.srce**
+
+```
+RunScript('player(player)', 'EndOfLevelCutScene');
+sleep(100);
+while IsCutSceneInProgress do sleep(50);
+```
+
+
 ####Initialize the old Monitor script
 
 > just commented in the **InitMonitors** parts
