@@ -243,6 +243,17 @@ begin
 
 	if lLoadingFlag = FALSE then
 	begin
+
+	    {  MHT: DEBUG HELPER
+
+            SetVector(pos, 29.1342, 18.2325, 37.5213);
+            MoveEntity(GetPlayer, pos, 1)
+
+            lLevelState := InCarPark;
+            RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
+
+	    }
+
 		lLevelState := StartOfLevel;
 		RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
 	end
@@ -884,9 +895,10 @@ begin
 		SetLevelGoal('GOAL15');
 		
 		RadarPositionSetEntity(GetEntity('triggerEnteringTruck'), MAP_COLOR_BLUE);
-		
-		{SetVector(pos, 31.1342, 18.2325, 37.5213);
-		CreateSphereTrigger(pos, 1.53063, 'triggerTruckSee');}
+
+		displaygametext("now");
+		SetVector(pos, 31.1342, 18.2325, 37.5213);
+		CreateSphereTrigger(pos, 1.53063, 'triggerTruckSee');
 		
 	end;
 
