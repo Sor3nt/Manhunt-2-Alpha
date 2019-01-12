@@ -1,0 +1,14 @@
+[
+    {
+        "name": "blockertutdisplayed",
+        "nameGarbage": "00000000000000000000000000",
+        "offset": "ffffffff",
+        "size": "ffffffff",
+        "hierarchieType": "ffffffff",
+        "objectType": "boolean",
+        "occurrences": [
+            88,
+            212
+        ]
+    }
+]
