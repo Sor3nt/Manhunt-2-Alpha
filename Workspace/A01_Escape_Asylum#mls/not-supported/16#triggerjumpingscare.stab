@@ -1,6 +1,7 @@
 [
     {
         "name": "runme",
+        "nameGarbage": "0000002500000000000000773a5c4d616e68756e74325c41737365",
         "offset": "98000000",
         "size": 4,
         "hierarchieType": "01000000",

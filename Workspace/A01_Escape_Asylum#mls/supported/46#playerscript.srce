@@ -411,7 +411,7 @@ begin
 	
 	{ === Cutscene Camera Animation Block (CameraCarPark) === }
 	CutsceneCameraInit;
-	{
+
 	CutscenecameraSetPos(0.0, 13.9259, 26.0065, 44.9982);
 	CutscenecameraSetPos(2.13333, 13.9259, 26.0065, 44.9982);
 	CutscenecameraSetPos(7.0, 26.6513, 21.3658, 37.5712);
@@ -427,7 +427,7 @@ begin
 	CutsceneCameraSetRoll(7.0, 0.0);
 	
 	CutSceneCameraSetHandyCam(true);
-	CutscenecameraStart;}
+	CutscenecameraStart;
 	{ === End Cutscene Camera Animation Block (CameraCarPark) === }
 
 
@@ -438,11 +438,11 @@ begin
         sleep(50);}
         
     {PlayDirectorSpeechPlaceholder('END1_A');
-
-    sleep(3000);}
-    {SetVector(pos,26.6513, 21.3658, 37.5712);
+}
+    sleep(3000);
+    SetVector(pos,26.6513, 21.3658, 37.5712);
     PlayScriptAudioStreamFromPosAuto('LEO19', 100, pos ,50);       	
-    while not IsScriptAudioStreamCompleted do sleep(10);}
+    while not IsScriptAudioStreamCompleted do sleep(10);
     
 
     {PlayDirectorSpeechPlaceHolder('END2_A');
@@ -488,15 +488,15 @@ begin
 		PlayDirectorSpeechPlaceholder('DRV7_A');
 		sleep(3000);}
 		sleep(100);
-		FrisbeeSpeechPlay('ESCAP', 75, 50);
-		sleep(2900);
-		{PlayScriptAudioStreamAuto('DRV6', 100);
+		{ FrisbeeSpeechPlay('ESCAP', 75, 50);
+		sleep(2900); }
+		PlayScriptAudioStreamAuto('DRV6', 100);
 		while not IsScriptAudioStreamCompleted do sleep(10);
 		PlayScriptAudioStreamAuto('DRV7', 100);
-		while not IsScriptAudioStreamCompleted do sleep(10);}
+		while not IsScriptAudioStreamCompleted do sleep(10);
 		
-{		PlayScriptAudioStreamAuto('ESCAP', 100);
-		while not IsScriptAudioStreamCompleted do sleep(10);}
+		PlayScriptAudioStreamAuto('ESCAP', 100);
+		while not IsScriptAudioStreamCompleted do sleep(10);
 
 		    
 	CutSceneEnd(false);
