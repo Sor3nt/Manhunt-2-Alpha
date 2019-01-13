@@ -836,8 +836,7 @@ begin
 		SetHunterExecutable(GetEntity('DriverEndScene(hunter)'), FALSE);
 		
 {		RunScript('player(player)', 'CarParkSpotlight');}
-		{RunScript('player(player)', 'CarParkPuzzle');}
-		
+
 		SetVector(pos, 30.2101, 17.1234, 37.434);
 		CreateSphereTrigger(pos, 0.8, 'triggerEnteringTruck');
 		
@@ -1301,7 +1300,6 @@ begin
             AIAddHunterToLeaderSubpack('leader(leader)', 'subMeleeTut', 'DriverEndScene(hunter)');
 
             { RunScript('player(player)', 'CarParkSpotlight');}
-            { RunScript('player(player)', 'CarParkPuzzle');}
 
             SetVector(pos, 30.2101, 17.1234, 37.434);
             CreateSphereTrigger(pos, 0.8, 'triggerEnteringTruck');
