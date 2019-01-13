@@ -106,7 +106,7 @@ begin
 	lSavePointTutRemoved := false;
 	lButtonTutRemoved := false;
 
-	lDebuggingFlag := FALSE;
+	lDebuggingFlag := TRUE;
 
 	cellCutscenePlayed := FALSE;
 	runSyringeSwitch := FALSE;
@@ -314,6 +314,10 @@ begin
 		SetVector(pos, -17.8864, 6.20619, 32.4688);
 		SetVector(pos2, -14.4864, 8.70619, 32.9688);
 		CreateBoxTrigger(pos, pos2, 'triggerDoorLocked');
+
+		SetVector(pos, -13.3137, 0.0, 26.5998);
+		SetVector(pos2, -9.7295, 2.31466, 27.2132);
+		CreateBoxTrigger(pos, pos2, 'triggerNewMeleeTut');
 
         SetVector(pos, -17.5835, 5.83983, 8.89683);
         SetVector(pos2, -13.9993, 8.1545, 9.51017);
