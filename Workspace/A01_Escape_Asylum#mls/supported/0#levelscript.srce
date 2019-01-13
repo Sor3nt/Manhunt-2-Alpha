@@ -323,11 +323,12 @@ begin
 		SetVector(pos2, -33.0089, 2.32868, 44.196);
 		CreateBoxTrigger(pos, pos2, 'triggerChairFly');
 
+		SetVector(pos, -13.739, 0.0, 40.7047);
+		SetVector(pos2, -13.3013, 1.19097, 44.1915);
+		CreateBoxTrigger(pos, pos2, 'triggerNoiseRem');
 
 
-        { #### MHT #### : Port from PS2 Leak, jump scare
-            TODO: this breaks the first tut because both share the same char (?)
-        }
+        { #### MHT #### : Port from PS2 Leak, jump scare }
 		SetVector(pos, -17.1411, 6.69318, 26.8479);
 		CreateSphereTrigger(pos, 0.670224, 'triggerLoon3');
 
