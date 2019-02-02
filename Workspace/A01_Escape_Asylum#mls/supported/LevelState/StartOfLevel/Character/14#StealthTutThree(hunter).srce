@@ -4,6 +4,7 @@ scriptmain StealthyThree;
 
     var
         me : string[30];
+        lModFlag : level_var boolean;
         stealthTutSpotted : level_var integer;
         speechSaid : boolean;
         stealthThreeLooper : level_var boolean;
@@ -28,6 +29,13 @@ scriptmain StealthyThree;
 
         RadarPositionSetEntity(this, MAP_COLOR_HUNTER_IDLE);
         AIDefineGoalGotoNode('goalHideThree', me, AISCRIPT_HIGHPRIORITY, 'HIDERTHREE', AISCRIPT_RUNMOVESPEED, TRUE);
+    	SetHunterExecutable(this, TRUE);
+
+        if lModFlag = TRUE then
+        begin
+            SetHunterExecutable(this, TRUE);
+        end;
+
     end;
 
     script OnLowHearingOrAbove;

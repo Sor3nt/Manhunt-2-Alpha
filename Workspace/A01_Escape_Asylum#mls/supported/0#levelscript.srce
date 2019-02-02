@@ -12,6 +12,7 @@ type
 var
 	{ ### MHT ###: remove some cutscense to speed up the walkthrough }
 	lDebuggingFlag : Boolean;
+	lModFlag : Boolean;
 
 	{ This tells what level the state is in. After setting (increasing) it, call OnLevelStateSwitch. }
 	lLevelState : tLevelState;
@@ -106,7 +107,13 @@ begin
 	lSavePointTutRemoved := false;
 	lButtonTutRemoved := false;
 
+
+	{ ### MHT ### disable the first three cutscenes }
 	lDebuggingFlag := TRUE;
+
+	{ ### MHT ### activate some mods }
+	lModFlag := FALSE;
+
 
 	cellCutscenePlayed := FALSE;
 	runSyringeSwitch := FALSE;
@@ -255,10 +262,22 @@ begin
 		lLevelState := StartOfLevel;
 		RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
 
+		//before elev working
+				lLevelState := PickedUpSyringe;
+                RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
+
+        		lLevelState := InOffice;
+                RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
+
+                SetVector(pos, -25.2674, 6.97214, 36.8107);
+                MoveEntity(GetPlayer, pos, 1)
+
+
 	    }
 
 		lLevelState := StartOfLevel;
 		RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
+
 	end
 	else
 	begin
@@ -329,6 +348,7 @@ begin
         SetVector(pos2, -13.9993, 8.1545, 9.51017);
         CreateBoxTrigger(pos, pos2, 'triggerNewMeleeTutTwo');
 
+        { #### MHT #### : this is the suicide guy  }
 		SetVector(pos, -33.654, 0.0140175, 40.7009);
 		SetVector(pos2, -33.0089, 2.32868, 44.196);
 		CreateBoxTrigger(pos, pos2, 'triggerChairFly');
@@ -414,15 +434,29 @@ begin
 		SetHunterMute(GetEntity('SobbingWoman(hunter)'), TRUE);
 		HideEntity(GetEntity('SobbingWoman(hunter)'));
 
+        { #### MHT #### StealthTut(hunter) ===> this is first guy that spit on you }
 		AIAddEntity('StealthTut(hunter)');
 		RunScript('StealthTut(hunter)', 'Init');
 		
+        { #### MHT #### StealthTutTwo(hunter) ===> this is second guy that piss on you }
 		AIAddEntity('StealthTutTwo(hunter)');
 		RunScript('StealthTutTwo(hunter)', 'Init');
+
+        { #### MHT #### check if the mod map is active }
+        if lModFlag = TRUE then
+        begin
+            { remove the cell for this hunters so we can kill them}
+            HideEntity(GetEntity('Asylum_cell_col'));
+            HideEntity(GetEntity('Asylum_cell_col01'));
+            HideEntity(GetEntity('Asylum_cell_col02'));
+        end;
+
 		
+        { #### MHT #### StealthTutThree(hunter) ===> this is third guy that shit on you }
 		AIAddEntity('StealthTutThree(hunter)');
 		RunScript('StealthTutThree(hunter)', 'Init');
 		
+        { #### MHT #### NewExecTut(hunter) ===> this is nurse, the first kill }
 		AIAddEntity('NewExecTut(hunter)');
 		RunScript('NewExecTut(hunter)', 'Init');
 
@@ -437,7 +471,7 @@ begin
 		while IsCutSceneInProgress do
 			sleep(50);
 
-						
+
 		HideEntity(GetEntity('E1_Cell_Door_(D)04'));
 
 		sleep(1500);
@@ -453,20 +487,22 @@ begin
 		EntityPlayAnim(GetEntity('PFXDrip03'), 'PAT_drips01', true);
 		EntityPlayAnim(GetEntity('PFXLand3'), 'PAT_drpcol01', true);
 		PlayAudioLoopedFromEntity(GetEntity('PFXDrip03'), 'LEVEL', 'WATERDRIP', 40, 8);
-		
-		
+
+
 		while not IsScriptAudioStreamCompleted do sleep(10);
 		FrisbeeSpeechPlay('LEO31', 100,10);
-    
+
 		DisplayGameText('MOVE1');
 		SetLevelGoal('GOAL1A');
 
-		
+
 		while NOT FrisbeeSpeechIsFinished('LEO31') do sleep(10);
 		sleep(500);
-        
+
 		FrisbeeSpeechPlay('LEO32', 100,10);
 		while NOT FrisbeeSpeechIsFinished('LEO32') do sleep(10);
+
+
     end;
 
     PickedUpSyringe: begin
