@@ -340,28 +340,7 @@ begin
 		SetVector(pos, 13.735, 22, 48.463);
 		CreateSphereTrigger(pos, 0.5, 'GlassOBJ');
 		RadarPositionSetEntity(GetEntity('GlassOBJ'), MAP_COLOR_LOCATION);  
-  
-  	{sleep(15000);
-  
-    if GetEntity('plaza_lobbyglass_break') <> NIL then
- 	 	begin
-  		reminderSet := TRUE;
-  		DisplayGameText('GLAS2');
-  		RadarPositionSetEntity(GetEntity('plaza_lobbyglass_break'), MAP_COLOR_BLUE);
-  		SetLevelGoal('BTW1');
-  	end;}
-		
-	{	while lLevelState <> InCarPark do
-		begin
-			PlayAudioOneShotFromEntity(GetEntity('TVLoonie01(hunter)'), 'LEVEL', 'DAYROOM_1', 127, 50);
-			sleep(RandNum(1000));
-			PlayAudioOneShotFromEntity(GetEntity('TVLoonie02(hunter)'), 'LEVEL', 'DAYROOM_2', 127, 50);
-			sleep(4000);
-		end;}
-		
-		{PlayScriptAudioStreamFromEntityAuto('LOONIES2', 50, GetEntity('TVLoonie01(hunter)'),40);}
-				
-end;
+  end;
 
 script TVRoomLightning;
 VAR
