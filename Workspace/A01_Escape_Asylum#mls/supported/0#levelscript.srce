@@ -246,6 +246,11 @@ begin
             RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
 
 
+        SetVector(pos, 6.86906, 17.9561, 1.30207);
+
+        MoveEntity(GetPlayer, pos, 1)
+		lLevelState := BeforeBeasts;
+
 
 		lLevelState := StartOfLevel;
 		RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
@@ -399,15 +404,16 @@ begin
 		sleep(1000);
 		while IsCutSceneInProgress do
 			sleep(50);
-			
+
 		writedebug('Intro has finished');
 
-		{ Initialize sobbing woman (this will force creation of this hunter and a call to OnCreate). }
+        { #### MHT #### SobbingWoman(hunter) ===> this is the guy you need to fight}
 		AIAddEntity('SobbingWoman(hunter)');
 		RegisterNonExecutableHunterInLevel;
+
 		SetHunterMute(GetEntity('SobbingWoman(hunter)'), TRUE);
 		HideEntity(GetEntity('SobbingWoman(hunter)'));
-		
+
 		AIAddEntity('StealthTut(hunter)');
 		RunScript('StealthTut(hunter)', 'Init');
 		
@@ -430,19 +436,9 @@ begin
 		
 		while IsCutSceneInProgress do
 			sleep(50);
+
 						
 		HideEntity(GetEntity('E1_Cell_Door_(D)04'));
-		
-		{AIAddEntity('DyingMan(hunter)');
-		SetPedDoNotDecay(GetEntity('DyingMan(hunter)'), TRUE);}
-	
-		{ Make character unlockonable, invulnerable, unexecutable }
-		{SetPedLockonable(GetEntity('DyingMan(hunter)'), FALSE);
-		SetEntityInvulnerable(GetEntity('DyingMan(hunter)'), TRUE);
-		SetHunterExecutable(GetEntity('DyingMan(hunter)'), FALSE);
-		AISetEntityIdleOverride('DyingMan(hunter)', TRUE, TRUE);}
-		
-		{AIEntityPlayAnim('DyingMan(hunter)', 'ASY_INMATE_IDLE_1');}
 
 		sleep(1500);
 
@@ -471,35 +467,33 @@ begin
         
 		FrisbeeSpeechPlay('LEO32', 100,10);
 		while NOT FrisbeeSpeechIsFinished('LEO32') do sleep(10);
-		
-		{KillEntityWithoutAnim(GetEntity('DyingMan(hunter)'));}
-	end;
+    end;
 
-  PickedUpSyringe: begin
-		WriteDebug('Switching to state: PickedUpSyringe');
-		
-		if runSyringeSwitch = FALSE then
-		begin
+    PickedUpSyringe: begin
+        WriteDebug('Switching to state: PickedUpSyringe');
 
-			{ Set up elevator doors }
-			RunScript('Upt_Elevator_DoorIL_(SD)', 'Init');
-			SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorIR_(SD)');
-			RunScript('Upt_Elevator_DoorIR_(SD)', 'Init');
-			SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorDR_(SD)');
-			RunScript('Upt_Elevator_DoorDR_(SD)', 'Init');
-			SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorDL_(SD)');
-			RunScript('Upt_Elevator_DoorDL_(SD)', 'Init');
-			SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorUR_(SD)');
-			RunScript('Upt_Elevator_DoorUR_(SD)', 'Init');
-			RunScript('Upt_Elevator_DoorUR_(SD)', 'Open');
-			SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorUL_(SD)');
-			RunScript('Upt_Elevator_DoorUL_(SD)', 'Init');
-			RunScript('Upt_Elevator_DoorUL_(SD)', 'Open');
-			
-			runSyringeSwitch := TRUE;
-			
-		end;
-  end;
+        if runSyringeSwitch = FALSE then
+        begin
+
+            { Set up elevator doors }
+            RunScript('Upt_Elevator_DoorIL_(SD)', 'Init');
+            SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorIR_(SD)');
+            RunScript('Upt_Elevator_DoorIR_(SD)', 'Init');
+            SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorDR_(SD)');
+            RunScript('Upt_Elevator_DoorDR_(SD)', 'Init');
+            SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorDL_(SD)');
+            RunScript('Upt_Elevator_DoorDL_(SD)', 'Init');
+            SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorUR_(SD)');
+            RunScript('Upt_Elevator_DoorUR_(SD)', 'Init');
+            RunScript('Upt_Elevator_DoorUR_(SD)', 'Open');
+            SetEntityScriptsFromEntity('Upt_Elevator_DoorIL_(SD)', 'Upt_Elevator_DoorUL_(SD)');
+            RunScript('Upt_Elevator_DoorUL_(SD)', 'Init');
+            RunScript('Upt_Elevator_DoorUL_(SD)', 'Open');
+
+            runSyringeSwitch := TRUE;
+
+        end;
+    end;
 
 	InOffice: begin
 		WriteDebug('Switching to state: InOffice');
@@ -536,7 +530,6 @@ begin
 	end;
 
 	BeforeElevator: begin
-		WriteDebug('Switching to state: BeforeElevator');
 		switchReady := FALSE;
 
 		{ Store current ambient stream in a global variable prior to saving }
@@ -677,7 +670,8 @@ begin
 		if GetEntity('DummyBanger(hunter)') <> NIL then DestroyEntity(GetEntity('DummyBanger(hunter)'));
 		if GetEntity('FightScene3(leader)') <> NIL then DestroyEntity(GetEntity('FightScene3(leader)'));
 		if GetEntity('FightScene4(leader)') <> NIL then DestroyEntity(GetEntity('FightScene4(leader)'));
-		
+
+
         { Create triggers }
 		SetVector(pos, 4.53198, 24.1012, -1.43828);
 		SetVector(pos2, 5.17104, 27.4754, 2.40105);
@@ -804,7 +798,6 @@ begin
 	end;
 
 	InCarPark: begin
-		WriteDebug('Switching to state: InCarPark');
 
         { Destroy unnecessary hunters }
 		if NIL <> GetEntity('Beast1(hunter)') then DestroyEntity(GetEntity('Beast1(hunter)'));
