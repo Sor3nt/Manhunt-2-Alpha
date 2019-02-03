@@ -109,7 +109,7 @@ begin
 
 
 	{ ### MHT ### disable the first three cutscenes }
-	lDebuggingFlag := TRUE;
+	lDebuggingFlag := FALSE;
 
 	{ ### MHT ### activate some mods }
 	lModFlag := FALSE;
@@ -276,7 +276,7 @@ begin
 	    }
 
 		lLevelState := StartOfLevel;
-		RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
+                RunScript('A01_Escape_Asylum', 'OnLevelStateSwitch');
 
 	end
 	else
